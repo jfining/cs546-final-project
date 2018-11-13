@@ -1,0 +1,19 @@
+{
+  "name": "cs546-final-project",
+  "version": "1.0.0",
+  "description": "CS546 final project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfining/cs546-final-project.git"
+  },
+  "author": "James Fining, Devesh Jain, Priyanka Dassani, Gopi Miyani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfining/cs546-final-project/issues"
+  },
+  "homepage": "https://github.com/jfining/cs546-final-project#readme"
+}
