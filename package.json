@@ -4,7 +4,8 @@
   "description": "CS546 final project",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test-db": "node test-db.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/jfining/cs546-final-project/issues"
   },
-  "homepage": "https://github.com/jfining/cs546-final-project#readme"
+  "homepage": "https://github.com/jfining/cs546-final-project#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mongodb": "^3.1.10",
+    "uuid": "^3.3.2"
+  }
 }
