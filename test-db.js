@@ -1,6 +1,8 @@
 const data = require("./data");
+const dbConnection = require("./data/mongoConnection.js");
 const productData = data.productsData;
 const userData = data.userData;
+const adminData = data.adminData;
 
 const test_product1 = {
  	"prod_name":"HP ENVY x360 Convertible",
@@ -28,8 +30,16 @@ const test_user1 = {
 	}
 };
 
+const test_admin1 = {
+	"username":"jaindevesh10",
+    "hashedPassword":"$2a$08$XdvNkfdNIL8Fq7l8xsuIUeSbNOFgK0"
+};
 
 async function main() {
+	//connect to db and sanitize it
+	const db = await dbConnection();
+	await db.dropDatabase();
+
 	//Product DB Tests
 	createProductTest = await productData.createProductByObject(test_product1);
 
@@ -60,8 +70,26 @@ async function main() {
 
 	console.log("delete user: " + removeUserTest);
 
+	//Admin DB Tests
+	createAdminTest = await adminData.createAdminByObject(test_admin1);
 
-	return;
+	console.log("create admin: " + JSON.stringify(createAdminTest));
+
+	getAdminTest = await adminData.getAdminById(createAdminTest["_id"]);
+
+	console.log("get admin: " + JSON.stringify(getAdminTest));
+
+	getAdminByUsernameTest = await adminData.getAdminByUsername(test_admin1["username"]);
+
+	console.log("get admin by username: " + JSON.stringify(getAdminByUsernameTest));
+
+	removeAdminTest = await adminData.removeAdmin(getAdminTest["_id"]);
+
+	console.log("delete admin: " + removeAdminTest);
+
+	//Done
+	console.log("Done.");
+	await db.close();
 }
 
 main();
