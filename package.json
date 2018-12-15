@@ -7,7 +7,8 @@
     "start": "node app.js",
     "test-db": "node test-db.js",
     "seed-db": "node seed-db.js",
-    "drop-db": "node drop-db.js"
+    "drop-db": "node drop-db.js",
+    "dev-seed": "node devtestdb.js"
   },
   "repository": {
     "type": "git",

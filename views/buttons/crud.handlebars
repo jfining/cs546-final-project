@@ -1,0 +1,25 @@
+<article>
+    <button type="button" onclick="window.location.href= '/admin/addlaptop'"> Add Product </button>
+    {{!-- <a href="/admin/addlaptop">Add</a> --}}
+    <p>Product List:</p>
+    <ol>
+        {{#each prodList}}
+        <li>ID: {{this._id}}</li>
+        <ul>
+            <img src="/images/test.png" width="150px" height="200px" alt="image1" />
+            <li>Name: {{this.prod_name}}</li>
+            <li>Brand:{{this.prod_brand}}</li>
+            <li>Price:{{this.prod_price}}</li>
+            <li>Screen Size:{{this.prod_screensize}}</li>
+            <li>RAM:{{this.prod_ram}}</li>
+            <li>Processor:{{this.prod_processor}}</li>
+            <li>HDD: {{this.prod_hard_disk_size}}</li>
+            <li>Rating: {{this.prod_rating}}</li>
+            <li>Sold: {{this.sold}}</li>
+            <button type="submit" onclick="window.location.href = '/admin/updatelaptop/{{this._id}}'"> Update Product
+            </button>
+            <button type="submit" onclick="window.location.href = '/admin/deletelaptop/{{this._id}}'"> Delete Product</button>
+        </ul>
+        {{/each}}
+    </ol>
+</article>

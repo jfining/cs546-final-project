@@ -1,0 +1,25 @@
+<script>
+    function validateForm() {
+
+    }
+</script>
+<form method="POST" action="/admin/updatedlaptop">
+    <input type="hidden" name="prodid" value="{{prod._id}}">
+    <ol>
+        <li>ID: {{prod._id}}</li>
+        <ul>
+            <li>Name: <input type="text" id="name" name="name" value="{{prod.prod_name}}"></li>
+            <li>Brand: <input type="text" id="brand" name="brand" value="{{prod.prod_brand}}"></li>
+            <li>Price: <input type="text" id="price" name="price" value="{{prod.prod_price}}"></li>
+            <li>Screen Size: <input type="text" id="size" name="ss" value="{{prod.prod_screensize}}"></li>
+            <li>RAM: <input type="text" id="ram" name="ram" value="{{prod.prod_ram}}"></li>
+            <li>Processor:<input type="text" id="processor" name="processor" value="{{prod.prod_processor}}"></li>
+            <li>HDD: <input type="text" id="hdd" name="hdd" value="{{prod.prod_hard_disk_size}}"></li>
+            <li>Rating: <input type="text" id="rating" name="rating" value="{{prod.prod_rating}}"></li>
+            <li>Sold: <input type="text" id="sold" name="sold" value="{{prod.sold}}"></li>
+        </ul>
+        <button type="submit">Update</button>
+        {{!-- <button type="submit" onclick="window.location.href = '/admin/updatedlaptop/{{this._id}}'"> Update</button>
+        --}}
+    </ol>
+</form>
