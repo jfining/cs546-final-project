@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test-db": "node test-db.js"
+    "test-db": "node test-db.js",
+    "seed-db": "node seed-db.js",
+    "drop-db": "node drop-db.js"
   },
   "repository": {
     "type": "git",
